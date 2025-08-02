@@ -1,4 +1,4 @@
-#High Rollers Solver
+# High Rollers Solver
 
 This project acts as a solver and calculator for the bonus game of the game show [High Rollers](https://en.wikipedia.org/wiki/High_Rollers) (1974-76, 78-80, 87-88).  
 
@@ -8,14 +8,14 @@ In addition, if a contestant rolled doubles, they were given an insurance marker
 
 This project was developed using Node.js, SQLite, and React, and consists of three scripts:
 
-##node/generate.js
+## node/generate.js
 
 This script calculates the winning chances and best moves for all possible combinations of numbers and quantity of insurance markers, and saves them in a SQLite database for future use.
 
-##node/query.js
+## node/query.js
 
 This opens up a port and listens for data from the React UI.  When it receives data, it reads the database and returns chance/best move information.
 
-##solver/
+## solver/
 
 The web page front end.  Choose the configuration of numbers still on the board and how many insurance markers you have, and it will tell you both the odds of victory at this moment and the best move for each possible roll.
