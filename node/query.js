@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 const db = new Database('./rollers.db');
 app.use(cors()); // Allow frontend access
 app.use(express.json());
@@ -24,8 +25,10 @@ app.post('/query', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '../solver/build')));
 
-app.get('/{*any}', (req, res) => {
+
+
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../solver/build/index.html'))
 });
 
-app.listen(3001, () => console.log('API running on port 3001'));
+app.listen(PORT, () => console.log('API running on port 3001'));
