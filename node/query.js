@@ -1,6 +1,7 @@
 const express = require('express');
 const Database = require('better-sqlite3');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const db = new Database('./rollers.db');
@@ -19,6 +20,12 @@ app.post('/query', (req, res) => {
   `);
     const result = stmt.get(...numbers, ins);
     res.json(result || {});
+});
+
+app.use(express.static(path.join(__dirname, '../solver/build')));
+
+app.get('/{*any}', (req, res) => {
+    res.sendFile(path.join(__dirname, '../solver/build/index.html'))
 });
 
 app.listen(3001, () => console.log('API running on port 3001'));
