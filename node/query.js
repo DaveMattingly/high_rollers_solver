@@ -25,10 +25,8 @@ app.post('/query', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '../solver/build')));
 
-
-
-app.get('*', (req, res) => {
+app.get('/{*any}', (req, res) => {
     res.sendFile(path.join(__dirname, '../solver/build/index.html'))
 });
 
-app.listen(PORT, () => console.log('API running on port 3001'));
+app.listen(PORT, () => console.log('API running on port', PORT));
