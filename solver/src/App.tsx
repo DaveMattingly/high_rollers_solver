@@ -26,7 +26,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-                const response = await axios.post<QueryResponse>('http://localhost:3001/query', {
+                const API_BASE = process.env.REACT_APP_API_URL || '';
+                const response = await axios.post<QueryResponse>(`${API_BASE}/query`, {
                     numbers: numbers,
                     ins: ins[0] + ins[1] + ins[2]
                 });
