@@ -6,7 +6,9 @@ Based on the game [Shut the Box](https://en.wikipedia.org/wiki/Shut_the_box), co
 
 In addition, if a contestant rolled doubles, they were given an insurance marker, which served as an extra life, allowing them to reroll the dice if they rolled a number that they couldn't eliminate.  Note that the contestants were given the insurance marker immediately, allowing for cases such as rolling 12, earning an insurance marker, and immediately given the insurance marker back because they did not have numbers equalling 12 left to eliminate.
 
-This project was developed using Node.js, SQLite, and React, and consists of three scripts:
+You can see the solver in action here: https://high-rollers-solver.onrender.com/ 
+
+This project was developed using Node.js, SQLite, and React, and consists of three main parts:
 
 ## node/generate.js
 
